@@ -7,6 +7,7 @@
 package com.bynder.sdk.query;
 
 import com.bynder.sdk.model.MediaType;
+
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +49,11 @@ public class MediaQuery {
      */
     @ApiField(name = "propertyOptionId", conversionType = ConversionType.LIST_FIELD)
     private List<String> propertyOptionIds;
+    /**
+     * Tags that the media asset needs to have at least one of.
+     */
+    @ApiField(name = "tags", conversionType = ConversionType.LIST_FIELD)
+    private List<String> tags;
     /**
      * Metaproperty option ids that the media asset has to have.
      */
@@ -129,5 +135,13 @@ public class MediaQuery {
     
     public Map<String, String> getRequiredPropertyOptionIds() {
         return requiredPropertyOptionIds;
+    }
+    public MediaQuery setTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+    
+    public List<String> getTags() {
+        return tags;
     }
 }
